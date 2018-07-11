@@ -1,7 +1,24 @@
+# Feed Reader Testing Project
+This is another project in Udacity's Front End Web Development Nano-degree program.
+## Table of Contents
+* [Instructions](#instructions)
+* [Contributing](#contributing)
+* [Original Readme](#original-readme)
+
+## Instructions
+When you load the index.html, the javascript will run and load the feeds. Use the hamburger menu in the top left to show a list of other feeds that can be loaded. Click on any one to see the most recent items available at that feed.
+
+## Resources
+* [jasmine](https://jasmine.github.io/)
+* @zoemrob was instrumental in helping complete the final few tests.
+
+## Contributing
+Feel free to offer any suggestions.
+
+## original-readme
 # Project Overview
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
-
+In this project we were given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite.
 
 ## Why this Project?
 
@@ -46,3 +63,6 @@ Review the Feed Reader Testing [Project Rubric](https://review.udacity.com/#!/pr
 19. Implement error handling for undefined variables and out-of-bound array access.
 20. When complete - all of your tests should pass. 
 21. Write a README file detailing all steps required to successfully run the application. If you have added additional tests (for Udacious Test Coverage),  provide documentation for what these future features are and what the tests are checking for.
+
+
+Thanks to @zoemrob for their assistance in figuring out the last few tests. 
