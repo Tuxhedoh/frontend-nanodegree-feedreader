@@ -96,21 +96,40 @@ $(function() {
         * Remember, loadFeed() is asynchronous so this test will require
         * the use of Jasmine's beforeEach and asynchronous done() function.
         */
+        beforeEach(function(done){
+            loadFeed(0,function(){
+                done();
+            });
+        });
+        
+
        it('should populate an element entry',function(){
-            testFeed = spyOn(loadFeed());
-            console.log(testFeed(0));
-            expect(1).toBe(1);
+            var myFeed = document.querySelector('.feed');
+            expect(myFeed).toBeTruthy();
+            expect(myFeed.children.length).toBeGreaterThan(0);
         });
     });
        
        /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function(){
+        var firstFeed;
+        var secondFeed;
+         beforeEach(function(done){
+            loadFeed(0,function(){
+                firstFeed = document.querySelector('.feed').getAttribute('href');
+                loadFeed(1,function(){
+                    secondFeed = document.querySelector('.feed').getAttribute('href'); 
+                })
+                done();
+            });
+         });
 
-
-
-        /* TODO: Write a test that ensures when a new feed is loaded
-        * by the loadFeed function that the content actually changes.
-        * Remember, loadFeed() is asynchronous.
-        */
+         /* TODO: Write a test that ensures when a new feed is loaded
+         * by the loadFeed function that the content actually changes.
+         * Remember, loadFeed() is asynchronous.
+         */
+        it('should populate feeds one after another',function(){
+            expect(firstFeed === secondFeed).toBeFalsy();
+        });
     })
 }());
