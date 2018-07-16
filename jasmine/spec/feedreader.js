@@ -76,14 +76,6 @@ $(function() {
 
     describe('Initial Entries', function(){
 
-
-        /* TODO: Write a test that ensures when the loadFeed
-        * function is called and completes its work, there is at least
-        * a single .entry element within the .feed container.
-        * Remember, loadFeed() is asynchronous so this test will require
-        * the use of Jasmine's beforeEach and asynchronous done() function.
-        */
-
         // beforeEach running loadFeed
         beforeEach(function(done){
             loadFeed(0,function(){
@@ -91,31 +83,30 @@ $(function() {
             });
         });
         
-
+        // verifies that there's an entry after loadFeed is run.
        it('should populate an element entry',function(){
-            var myFeed = document.querySelector('.entry');
+            var myFeed = document.querySelector('.feed .entry');
             expect(myFeed).toBeTruthy();
         });
     });
        
-       /* TODO: Write a new test suite named "New Feed Selection" */
+    // This suite tests the selection of a new feed.
     describe('New Feed Selection', function(){
         var firstFeed;
         var secondFeed;
+
+        // before Each running loadFeed twice, each time grabbing the href attribute from the first item in the feed.
          beforeEach(function(done){
             loadFeed(0,function(){
                 firstFeed = document.querySelector('.feed').getAttribute('href');
                 loadFeed(1,function(){
-                    secondFeed = document.querySelector('.feed').getAttribute('href'); 
-                })
-                done();
+                    secondFeed = document.querySelector('.feed').getAttribute('href');
+                    done() 
+                });
             });
          });
 
-         /* TODO: Write a test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
-         */
+        // tests whether firstFeed and secondFeed have different content.
         it('should populate feeds one after another',function(){
             expect(firstFeed === secondFeed).toBeFalsy();
         });
